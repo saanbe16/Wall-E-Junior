@@ -1,11 +1,12 @@
 # Wall-E-Junior
 
-1. Introduction:
-(1.a)
+# 1. Introduction:
+
 Ever since we enrolled in Embedded Systems and heard about the final Project, we have been pondering on what we should make. Our first couple thoughts were vary generic; everyone had the same idea. We wanted to think out of the box, bigger, smarter, and more embedded than ever. With the price of gas rising up and our world being more polluted than ever, in addition to our ambitious ideas:
 We would like to present our very own Bluetooth controlled car, or what we like to call our “Tesla”.
 Now we know what you’re thinking, “Group 7, this hardly sounds like a feasible project, and even if you did get it to work, what makes you think it could compete with the visionary cars of today?”. Well, what if we told you, that our “Tesla” has everything a driver could ever ask for, and more.
-(1.b)
+
+
 Our goal was to successfully build a car and be able to control it using a Bluetooth module we would connect to use a pre-developed software. As much as we would have liked to work on our own piece of software for a speech-to-text application, with the constraints of resources and time we decided it was wiser to back on this idea.
   
 In addition, another feature we thought would be interesting to add is object detection. As our “Tesla” will be driving down the halls of the Seamans Center, we wouldn’t want I to accidently bumped into someone (or something idk yet).
@@ -13,9 +14,11 @@ While we wanted to add extra features in our project, after multiple conversatio
 2. Implementation:
 (2.a) Overview: big picture of the project HW&SW components, outline interaction between components
 Our project, being a car prototype will of course include 4 wheels, and in our case 4 motors. The motors will be connected in pairs to two L293D motor drivers. As the brain of this project, we will be using an Arduino UNO R3 powering and ATMega328p micro-controller. The multiple LEDs on our car used as front and back lights as well as indicators will be connected to a breadboard in a first instance before connecting some inputs to control them accordingly with our Arduino. In addition, our ultrasonic sensor will be connected directly to our Arduino to avoid any unnecessary extra delays and power consumption issue as the Arduino can get overwhelmed due to the LEDs and computation it has to do. Finally, the TAs for this course directed our attention to power consumption as the DC motors need a greater power to work efficiently. Hence, we have decided to opt for an external battery to accommodate for the needs of our DC motors.
-(2.b) Schematic
+
+# (2.b) Schematic
  
-(2.c) Software description
+# (2.c) Software description
+
 For the software, we created multiple functions to help us with our tasks.
 First, we created a function to control the ultra-sonic sensor. This function allows us to initialize the sensor and measure the distance away from an object. Whenever an object is too close to the sensor, we set a command to make the car change direction.
 Next, we used the used the same methods as lab 5 to transfer serial data to the HC-05 Bluetooth module. However, we edited the USART_RECIEVE function such that the ultra-sonic sensor would always check for obstacles to see if it needs to make the car turn.
@@ -42,7 +45,8 @@ Experiment3: We then worked on the core part of our project, building the car, a
 Experiment 4: Finally, we put all of our parts together to form an efficient “Tesla” model.
 
 The main task of this experiment was to wire properly the different components and enable the appropriate pins as input or output. In addition, we also tested our poser source which was a 9v battery connected to the DC input of the Arduino.
-4. Results:
+
+# 4. Results:
 Experiment 1: The Bluetooth device ended up working successfully with our application and we were able to turn lights on and off with voice commands.
 Experiment 2: This experiment was a success as we were able to do exactly what we were reaching for. We set a threshold distance of 10 cm and slowly moved and object towards the sensor. The green LED was on until the threshold distance, once it was reached and any other distance below it, the red LED was on.
 Experiment 3: This experiment was very successful, after getting all the parts, putting the different elements was like putting Legos together.
